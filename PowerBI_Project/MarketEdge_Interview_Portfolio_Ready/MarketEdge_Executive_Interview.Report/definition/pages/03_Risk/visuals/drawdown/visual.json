@@ -1,0 +1,222 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "drawdown",
+  "position": {
+    "x": 919,
+    "y": 289,
+    "width": 639,
+    "height": 322,
+    "z": 10,
+    "tabOrder": 2981
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ExitDate"
+                }
+              },
+              "queryRef": "FactBacktest.ExitDate",
+              "nativeQueryRef": "ExitDate",
+              "active": true,
+              "displayName": "Exit date"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME End of Day Drawdown"
+                }
+              },
+              "queryRef": "FactBacktest.ME End of Day Drawdown",
+              "nativeQueryRef": "ME End of Day Drawdown",
+              "active": true,
+              "displayName": "End-of-day drawdown"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Cumulative Gross"
+                }
+              },
+              "queryRef": "FactBacktest.ME Cumulative Gross",
+              "nativeQueryRef": "ME Cumulative Gross",
+              "active": true,
+              "displayName": "Cumulative gross P&L"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Gross PnL"
+                }
+              },
+              "queryRef": "FactBacktest.ME Gross PnL",
+              "nativeQueryRef": "ME Gross PnL",
+              "active": true,
+              "displayName": "Gross P&L"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'End-of-day gross drawdown'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1A3048'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Historical performance trend; gross results, not verified net returns.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B8505C'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactBacktest.ME End of Day Drawdown"
+          }
+        }
+      ]
+    }
+  }
+}

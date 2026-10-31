@@ -1,0 +1,334 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "risk_reward_bubble",
+  "position": {
+    "x": 817,
+    "y": 249,
+    "z": 10,
+    "height": 389,
+    "width": 741,
+    "tabOrder": 2572
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "SectorGrade"
+                }
+              },
+              "queryRef": "FactBacktest.SectorGrade",
+              "nativeQueryRef": "Sector / grade",
+              "active": true,
+              "displayName": "Sector / grade"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Trades"
+                }
+              },
+              "queryRef": "FactBacktest.ME Trades",
+              "nativeQueryRef": "ME Trades",
+              "active": true
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "Sector"
+                }
+              },
+              "queryRef": "FactBacktest.Sector",
+              "nativeQueryRef": "Sector",
+              "active": true,
+              "displayName": "Sector"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "queryRef": "FactBacktest.Grade",
+              "nativeQueryRef": "Grade",
+              "active": true,
+              "displayName": "Grade"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Trades"
+                }
+              },
+              "queryRef": "FactBacktest.ME Trades",
+              "nativeQueryRef": "ME Trades",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Win Rate"
+                }
+              },
+              "queryRef": "FactBacktest.ME Win Rate",
+              "nativeQueryRef": "ME Win Rate",
+              "active": true,
+              "displayName": "Win rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Avg R"
+                }
+              },
+              "queryRef": "FactBacktest.ME Avg R",
+              "nativeQueryRef": "ME Avg R",
+              "active": true,
+              "displayName": "Average R"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Profit Factor"
+                }
+              },
+              "queryRef": "FactBacktest.ME Profit Factor",
+              "nativeQueryRef": "Profit factor",
+              "active": true,
+              "displayName": "Profit factor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Gross PnL"
+                }
+              },
+              "queryRef": "FactBacktest.ME Gross PnL",
+              "nativeQueryRef": "Gross P&L",
+              "active": true,
+              "displayName": "Gross P&L"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Quality Flag"
+                }
+              },
+              "queryRef": "FactBacktest.ME Quality Flag",
+              "nativeQueryRef": "Sample quality",
+              "active": true,
+              "displayName": "Sample quality"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Win Rate"
+                }
+              },
+              "queryRef": "FactBacktest.ME Win Rate",
+              "nativeQueryRef": "ME Win Rate",
+              "active": true,
+              "displayName": "Win rate"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Avg R"
+                }
+              },
+              "queryRef": "FactBacktest.ME Avg R",
+              "nativeQueryRef": "ME Avg R",
+              "active": true,
+              "displayName": "Average R"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sector–grade cohorts: win rate vs average R'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1A3048'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sector and grade comparison: win rate on X, average R on Y, size represents reported outcomes.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

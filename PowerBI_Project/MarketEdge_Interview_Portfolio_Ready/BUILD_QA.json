@@ -1,0 +1,45 @@
+{
+  "based_on": "user-tested MarketEdge_Interview_FINAL_Fixed PBIP",
+  "pages": 4,
+  "visual_count": 74,
+  "visuals_by_page": {
+    "01_Executive": {
+      "textbox": 9,
+      "cardVisual": 7,
+      "clusteredColumnChart": 3,
+      "waterfallChart": 1,
+      "lineChart": 1
+    },
+    "02_Sector": {
+      "textbox": 7,
+      "slicer": 6,
+      "clusteredColumnChart": 2,
+      "scatterChart": 1,
+      "pivotTable": 1,
+      "cardVisual": 1
+    },
+    "03_Risk": {
+      "textbox": 6,
+      "clusteredColumnChart": 3,
+      "lineChart": 1,
+      "waterfallChart": 1,
+      "cardVisual": 6
+    },
+    "04_Audit": {
+      "cardVisual": 4,
+      "textbox": 11,
+      "clusteredColumnChart": 1,
+      "tableEx": 2
+    }
+  },
+  "model_source_sha256": "4285e310e77553935fca6043f951d1a2abdd089f63be30a9b189e09d5443f133",
+  "source_partitions_identical": true,
+  "source_columns_identical": true,
+  "new_display_only_measures": [
+    "ME Readout Brief"
+  ],
+  "all_query_fields_resolve": true,
+  "conflicting_display_names": 0,
+  "all_visuals_within_page_bounds": true,
+  "windows_powerbi_render_tested": false
+}

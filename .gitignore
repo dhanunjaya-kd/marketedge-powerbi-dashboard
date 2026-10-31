@@ -1,0 +1,13 @@
+﻿# Power BI local/cache files
+.pbi/
+**/.pbi/
+*.abf
+*.pbix
+*.pbit
+*.zip
+*.bak
+*.tmp
+*.lock
+*.env
+*.key
+**/localSettings.json

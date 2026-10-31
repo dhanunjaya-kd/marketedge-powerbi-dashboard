@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "footer",
+  "position": {
+    "x": 40,
+    "y": 857,
+    "width": 1518,
+    "height": 30,
+    "z": 30,
+    "tabOrder": 8574
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "RISK NOTE  •  T1/T2/T3 denote mutually exclusive FINAL exit records, not cumulative target touches. Drawdown uses daily gross results, not broker-level equity.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "fontFamily": "Segoe UI",
+                      "color": "#51677D",
+                      "bold": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

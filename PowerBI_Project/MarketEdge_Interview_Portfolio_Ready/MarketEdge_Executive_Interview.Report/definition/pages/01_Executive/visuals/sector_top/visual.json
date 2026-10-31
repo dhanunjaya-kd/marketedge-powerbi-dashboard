@@ -1,0 +1,342 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "sector_top",
+  "position": {
+    "x": 630,
+    "y": 643,
+    "z": 10,
+    "height": 196,
+    "width": 570,
+    "tabOrder": 6493
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "Sector"
+                }
+              },
+              "queryRef": "FactBacktest.Sector",
+              "nativeQueryRef": "Sector",
+              "active": true,
+              "displayName": "Sector"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Trades"
+                }
+              },
+              "queryRef": "FactBacktest.ME Trades",
+              "nativeQueryRef": "Reported outcomes",
+              "active": true,
+              "displayName": "Reported outcomes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Win Rate"
+                }
+              },
+              "queryRef": "FactBacktest.ME Win Rate",
+              "nativeQueryRef": "Win rate",
+              "active": true,
+              "displayName": "Win rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Profit Factor"
+                }
+              },
+              "queryRef": "FactBacktest.ME Profit Factor",
+              "nativeQueryRef": "Profit factor",
+              "active": true,
+              "displayName": "Profit factor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Quality Flag"
+                }
+              },
+              "queryRef": "FactBacktest.ME Quality Flag",
+              "nativeQueryRef": "Sample warning",
+              "active": true,
+              "displayName": "Sample warning"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactBacktest"
+                    }
+                  },
+                  "Property": "ME Top 5 Sector Gross"
+                }
+              },
+              "queryRef": "FactBacktest.ME Top 5 Sector Gross",
+              "nativeQueryRef": "ME Top 5 Sector Gross",
+              "active": true,
+              "displayName": "Top-5 gross P&L"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3276AF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactBacktest.ME Gross PnL"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top five sectors by reported gross result'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1A3048'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Historical outcomes grouped by category.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "76d7dd92d89c886ab333",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactBacktest"
+              }
+            },
+            "Property": "Sector"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "26ecb8a702b4533b8cb4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactBacktest"
+              }
+            },
+            "Property": "ME Top 5 Sector Gross"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "498cddcbe49cdc720000",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactBacktest"
+              }
+            },
+            "Property": "ME Trades"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f450027347d0b8219974",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactBacktest"
+              }
+            },
+            "Property": "ME Win Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f4f8cbe057698ab03ebe",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactBacktest"
+              }
+            },
+            "Property": "ME Profit Factor"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "80d9eef802ed95a3bb33",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactBacktest"
+              }
+            },
+            "Property": "ME Quality Flag"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

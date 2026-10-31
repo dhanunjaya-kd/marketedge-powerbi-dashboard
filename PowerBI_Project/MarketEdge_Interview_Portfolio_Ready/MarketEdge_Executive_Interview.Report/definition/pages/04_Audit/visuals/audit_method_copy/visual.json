@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "audit_method_copy",
+  "position": {
+    "x": 1090,
+    "y": 625,
+    "width": 450,
+    "height": 186,
+    "z": 30,
+    "tabOrder": 6359
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "01   Backtest outcomes are filtered results.\n\n02   Raw signals overlap those results.\n\n03   Repeat keys are not proven duplicate fills.\n\n04   Charges and verified net P&L are missing.",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "fontFamily": "Segoe UI",
+                      "color": "#39556A",
+                      "bold": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

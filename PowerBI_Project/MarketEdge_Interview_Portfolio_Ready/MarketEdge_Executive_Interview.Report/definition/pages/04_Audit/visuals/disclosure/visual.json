@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "disclosure",
+  "position": {
+    "x": 57,
+    "y": 290,
+    "width": 1480,
+    "height": 53,
+    "z": 30,
+    "tabOrder": 2906
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "DATA CONTRACT  •  505 PDF backtest outcomes and 590 raw signal rows overlap. Never add them.\nRepeat keys require review; verified net P&L is unavailable.",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "fontFamily": "Segoe UI",
+                      "color": "#A84047",
+                      "bold": true
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "footer",
+  "position": {
+    "x": 40,
+    "y": 857,
+    "width": 1518,
+    "height": 30,
+    "z": 30,
+    "tabOrder": 8574
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "HOVER A BUBBLE for sector, gross P&L, profit factor and n. Amber matrix cells mean fewer than 20 reported trades. Two months ≠ validated predictive edge.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "fontFamily": "Segoe UI",
+                      "color": "#51677D",
+                      "bold": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

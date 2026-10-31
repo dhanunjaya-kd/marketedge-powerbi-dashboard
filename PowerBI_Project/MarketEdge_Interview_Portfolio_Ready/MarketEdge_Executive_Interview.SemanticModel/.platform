@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "MarketEdge_Interview_Portfolio_Ready"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "58c24c9b-9ff5-4de9-a4c4-58bda37958e2"
+  }
+}

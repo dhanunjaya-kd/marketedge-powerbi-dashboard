@@ -1,0 +1,77 @@
+-- MARKETEDGE | TRADING INTELLIGENCE PRO
+-- Dataset: MarketEdge_PowerBI_Premium_Sanitized_Data.xlsx
+-- Financial metrics use FactBacktest (505 historical PDF-reported rows), NOT FactSignals (590 raw log rows).
+-- Create each expression as a separate measure in Power BI Desktop.
+-- Measure formulas are ordinary reporting aggregates, not proprietary signal generation logic.
+
+Backtest Trades = COUNTROWS(FactBacktest)
+
+Winning Trades = SUM(FactBacktest[IsWin])
+
+Losing Trades = [Backtest Trades] - [Winning Trades]
+
+Win Rate = DIVIDE([Winning Trades], [Backtest Trades])
+
+Loss Rate = DIVIDE([Losing Trades], [Backtest Trades])
+
+Gross P&L = SUM(FactBacktest[GrossPnL])
+
+Gross Winning P&L = CALCULATE([Gross P&L], FactBacktest[GrossPnL] > 0)
+
+Gross Losing P&L = CALCULATE([Gross P&L], FactBacktest[GrossPnL] < 0)
+
+Profit Factor = DIVIDE([Gross Winning P&L], ABS([Gross Losing P&L]))
+
+Average R = AVERAGE(FactBacktest[RMultiple])
+
+Average Gross P&L per Trade = DIVIDE([Gross P&L], [Backtest Trades])
+
+Target 1 Exits = CALCULATE([Backtest Trades], FactBacktest[ExitType] = "Target 1")
+
+Target 2 Exits = CALCULATE([Backtest Trades], FactBacktest[ExitType] = "Target 2")
+
+Target 3 Exits = CALCULATE([Backtest Trades], FactBacktest[ExitType] = "Target 3")
+
+Stop Loss Exits = CALCULATE([Backtest Trades], FactBacktest[ExitType] = "SL")
+
+Target 3 Exit Rate = DIVIDE([Target 3 Exits], [Backtest Trades])
+
+-- The following remain BLANK until every selected backtest trade has VERIFIED charges and net P&L.
+-- Do not replace nulls with 0 or call GrossPnL "NetPnL".
+Verified Charges =
+VAR MissingCharges = COUNTROWS(FILTER(FactBacktest, ISBLANK(FactBacktest[Charges])))
+RETURN IF(MissingCharges > 0, BLANK(), SUM(FactBacktest[Charges]))
+
+Verified Net P&L =
+VAR MissingNet = COUNTROWS(FILTER(FactBacktest, ISBLANK(FactBacktest[NetPnL])))
+RETURN IF(MissingNet > 0, BLANK(), SUM(FactBacktest[NetPnL]))
+
+-- Dates are true Excel date values in FactBacktest[ExitDate].
+Cumulative Gross P&L =
+VAR VisibleDate = MAX(FactBacktest[ExitDate])
+RETURN CALCULATE(
+    [Gross P&L],
+    FILTER(ALLSELECTED(FactBacktest[ExitDate]), FactBacktest[ExitDate] <= VisibleDate)
+)
+
+-- Use chart visuals with ExitDate (daily closing cumulative equity), NOT trade-by-trade intraday equity.
+-- FactSignals is a SECOND, INDEPENDENT data source; NEVER sum its rows into "Backtest Trades".
+Raw Signal Rows = COUNTROWS(FactSignals)
+
+Raw Signal Rows Requiring Repeated-Key Review = SUM(FactSignals[DuplicateReview])
+
+Raw Signal Rows Incomplete =
+CALCULATE([Raw Signal Rows], FactSignals[DataStatus] = "Incomplete core fields")
+
+Raw Signal Rows Missing Outcome =
+CALCULATE([Raw Signal Rows], FactSignals[DataStatus] = "Outcome missing")
+
+Raw Signal Outcome Coverage =
+DIVIDE(
+    [Raw Signal Rows] - [Raw Signal Rows Missing Outcome],
+    [Raw Signal Rows]
+)
+
+-- Default page filter recommendation: FactBacktest[SignalFamily] = "Sniper (non-Tape)".
+-- September has no Tape Momentum in the PDF-filtered data. October does (86 trades).
+-- IMPORTANT: No evidence here demonstrates live brokerage fills or true after-charge profitability.

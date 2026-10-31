@@ -1,0 +1,13 @@
+{
+  "name": "MarketEdge Trading Intelligence Pro — Deep Violet",
+  "dataColors": ["#A875FF", "#DA63E6", "#4EE1E2", "#55DFBD", "#FF729B", "#FBD480", "#7070EA", "#9BDBFF"],
+  "background": "#070817",
+  "foreground": "#F3F0FF",
+  "tableAccent": "#A875FF",
+  "good": "#55DFBD",
+  "neutral": "#FBD480",
+  "bad": "#FF729B",
+  "minimum": "#3B245C",
+  "center": "#7050BA",
+  "maximum": "#E77AF1"
+}
